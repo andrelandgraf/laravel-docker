@@ -1,5 +1,5 @@
 ## Info
-This is a walking skeleton for a web app for both development and production,
+This is a walking skeleton web app for both development and production,
 using:
 - laravel (master / 5.6 / php >= 7.1.3)
 - mariaDB
