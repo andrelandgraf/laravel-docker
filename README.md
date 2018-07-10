@@ -29,8 +29,7 @@ apt-get install docker-compose
 docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 
 ```
---ignore-platform-reqs to mute errors from composer image php version 
-See: https://hub.docker.com/r/library/composer/
+--ignore-platform-reqs to mute errors from composer image php version, see: https://hub.docker.com/r/library/composer/
 
 **Start the web app for dev**
  
