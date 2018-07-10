@@ -1,19 +1,52 @@
-Folgendem Tutorial wurde gefolgt:
+## Info
+This is a walking skeleton for a web app for both development and production,
+using:
+- laravel (master / 5.6 / php >= 7.1.3)
+- mariaDB
+- docker / docker-compose
+- ngix
+
+! following guide does not work the same way for windows OS !
+
+## Prerequisites
+Also have a look at:
 https://github.com/laravel/laravel
 https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c
 
-Install dependencies first:
+**Install docker and docker-compose**
 
-apt-get install curl
-
+```
 apt-get install docker.io
+```
 
+```
 apt-get install docker-compose
+```
 
-// --ignore-platform-reqs to mute errors from composer image php version 
-// https://hub.docker.com/r/library/composer/
+**Install dependencies**
+
+```
 docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 
-Setting up laravel after docker-compose up
+```
+--ignore-platform-reqs to mute errors from composer image php version 
+See: https://hub.docker.com/r/library/composer/
+
+**Start the web app for dev**
+ 
+ ```
+docker-compose up
+
+```
+
+**Application key - Setting up laravel after docker-compose up**
+ ```
+docker-compose exec app php artisan key:generate
+
+```
+this has to be done only once. 
+
+Also note: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
-docker-compose exec app php artisan optimize DO NOT DO THIS: NOT NEEDED ANYMORE
+No need for "docker-compose exec app php artisan optimize" anymore
+
