@@ -10,8 +10,8 @@ using:
 
 ## Prerequisites
 Also have a look at:
-https://github.com/laravel/laravel
-https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c
+- https://github.com/laravel/laravel
+- https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c
 
 **Install docker and docker-compose**
 
