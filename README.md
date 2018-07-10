@@ -45,7 +45,6 @@ docker-compose exec app php artisan key:generate
 ```
 this has to be done only once. 
 
-Also note: 
+No need for "docker-compose exec app php artisan optimize" anymore, see: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
-No need for "docker-compose exec app php artisan optimize" anymore
 
