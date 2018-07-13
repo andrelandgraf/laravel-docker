@@ -6,12 +6,17 @@ using:
 - docker / docker-compose
 - ngix
 
-! following guide does not work the same way for windows OS !
+## Feedback
+Feel free to get inspired and more importantly provide [your feedback](https://github.com/andrelandgraf/laravel-docker/issues) on structure and style. I'm more than happy to learn how to improve my code and architecture.
+
+Please provide feedback via: 
 
 ## Prerequisites
 Also have a look at:
 - https://github.com/laravel/laravel
 - https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c
+
+! following guide does not work the same way for windows OS !
 
 **Install docker and docker-compose**
 
