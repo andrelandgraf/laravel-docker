@@ -13,6 +13,7 @@ Feel free to get inspired and more importantly provide [your feedback](https://g
 Also have a look at:
 - https://github.com/laravel/laravel
 - https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c
+- https://github.com/shipping-docker/php-app
 
 ! following guide does not work the same way for windows OS !
 
@@ -74,7 +75,7 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 6. For more information see the [jetbrains documentation](https://www.jetbrains.com/help/idea/running-a-dbms-image.html).
 
 
-### Start Dev Environment
+## Start Dev Environment
 
 ```
 docker-compose up
@@ -86,4 +87,6 @@ docker-compose up
 ```
 docker ps
 ```
+
+## Start Production Environment
 
