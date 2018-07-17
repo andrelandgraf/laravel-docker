@@ -51,3 +51,15 @@ This has to be done only once.
 No need for "docker-compose exec app php artisan optimize" anymore, see: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 
+### Start Dev Environment
+
+```
+docker-compose up
+
+```
+
+** Check containers**
+```
+docker ps
+```
+
