@@ -64,7 +64,7 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 3. Select the compose File: ./docker-compose.yml
 4. Apply and run for "docker-compose up"
 
-***Add the Data Source**
+**Add the Data Source**
 
 - Make sure docker-compose up is running
 - Click New (The New button), point to Data Source, and then choose MySQL (MariaDB).
