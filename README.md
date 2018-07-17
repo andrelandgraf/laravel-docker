@@ -50,7 +50,7 @@ This has to be done only once.
 No need for "docker-compose exec app php artisan optimize" anymore, see: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 
-## Workinb with Webstorm
+## Working with Webstorm
 
 **Install the Laravel Plugin**
 ```
