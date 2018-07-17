@@ -36,9 +36,8 @@ docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 
 **Start the web app for dev**
  
- ```
+```
 docker-compose up
-
 ```
 
 **Application key - Setting up laravel after docker-compose up**
@@ -51,6 +50,22 @@ This has to be done only once.
 No need for "docker-compose exec app php artisan optimize" anymore, see: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 
+## Workinb with Webstorm
+
+**Install the Laravel Plugin**
+```
+Go To: File/Settings/Plugin and Install Laravel Plugin
+
+```
+
+**Configure Docker Compose**
+
+1. Edit Config File
+2. Create a new Docker Configuration
+3. Select the compose File: ./docker-compose.yml
+4. Apply and run for "docker-compose up"
+
+
 ### Start Dev Environment
 
 ```
@@ -59,6 +74,7 @@ docker-compose up
 ```
 
 **Check containers**
+
 ```
 docker ps
 ```
