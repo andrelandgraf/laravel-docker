@@ -64,6 +64,14 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 3. Select the compose File: ./docker-compose.yml
 4. Apply and run for "docker-compose up"
 
+***Add the Data Source**
+
+- Make sure docker-compose up is running
+- Click New (The New button), point to Data Source, and then choose MySQL (MariaDB).
+- Set the host name to local, port to 33061, database and user names to homestead, and set password to secret
+- If necessary, download the driver and test the connection.
+- For more information see the [jetbrains documentation](https://www.jetbrains.com/help/idea/running-a-dbms-image.html).
+
 
 ### Start Dev Environment
 
