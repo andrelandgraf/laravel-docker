@@ -67,6 +67,7 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 **Add the Data Source**
 
 - Make sure docker-compose up is running
+- Go to View > Tool Windows > Database
 - Click New (The New button), point to Data Source, and then choose MySQL (MariaDB).
 - Set the host name to local, port to 33061, database and user names to homestead, and set password to secret
 - If necessary, download the driver and test the connection.
