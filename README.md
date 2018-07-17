@@ -53,10 +53,9 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 ## Working with Webstorm
 
 **Install the Laravel Plugin**
-```
-Go To: File/Settings/Plugin and Install Laravel Plugin
 
-```
+- Install plugin under "Settings > Plugins > Laravel Plugin"
+- Activate it per Project under "Settings > Languages & Frameworks > PHP > Laravel"
 
 **Configure Docker Compose**
 
