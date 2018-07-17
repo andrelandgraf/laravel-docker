@@ -58,7 +58,7 @@ docker-compose up
 
 ```
 
-** Check containers**
+**Check containers**
 ```
 docker ps
 ```
