@@ -12,5 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        // activate only the Seeders that should put demo data into the DB
+        $this->call(PizzaTableSeeder::class);
     }
 }

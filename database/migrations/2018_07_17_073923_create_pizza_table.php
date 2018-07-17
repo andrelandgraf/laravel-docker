@@ -17,7 +17,7 @@ class CreatePizzaTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('description');
-            $table->float('amount');
+            $table->float('price');
             $table->timestamps();
         });
     }
