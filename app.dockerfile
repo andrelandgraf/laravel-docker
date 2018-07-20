@@ -5,3 +5,4 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
 && docker-php-ext-install mcrypt pdo_mysql
+&& chmod -R o+rw laravel-master/bootstrap laravel-master/storage
