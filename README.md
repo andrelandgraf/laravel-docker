@@ -88,6 +88,22 @@ docker-compose up
 docker ps
 ```
 
+**Work within the container**
+
+This will open a bash within the docker container so you can interact with php artisan and other dev tools.
+```
+docker-compase exec app bash -b
+```
+For example use [php artisan tinker](https://scotch.io/tutorials/tinker-with-the-data-in-your-laravel-apps-with-php-artisan-tinker) to work with your database like follows:
+```
+root@dockercontainer:/var/www# php artisan tinker
+>>> App\Pizza::count()
+=> 10
+>>> App\Pizze::all()
+=> ...
+```
+
+
 ## Start Production Environment
 
 

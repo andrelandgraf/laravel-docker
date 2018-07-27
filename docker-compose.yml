@@ -19,8 +19,8 @@ services:
       context: ./
       dockerfile: web.dockerfile
     working_dir: /var/www
-    volumes_from:
-      - app
+    volumes:
+      - ./public:/var/www/public
     ports:
       - 8080:80
 

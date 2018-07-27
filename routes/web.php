@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $pizzas = \App\Pizza::all();
+
+    return view('welcome')->with('pizzas', $pizzas);
 });
 
 Auth::routes();

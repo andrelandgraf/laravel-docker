@@ -59,6 +59,33 @@
                 text-transform: uppercase;
             }
 
+            .pizza-selection {
+                margin-top: 5vh;
+                border-collapse: collapse;
+                width: 100%
+            }
+
+            .pizza-selection table {
+                text-align: left;
+            }
+
+            .pizza-selection td, .pizza-selection th{
+                border: 1px solid #dddddd;
+                padding: 8px;
+            }
+
+            .pizza-selection td {
+                color: #1b1e21;
+            }
+
+            .pizza-selection tr:nth-child(even){
+                background-color: #F2F2F2;
+            }
+
+            .pizza-selection tr:hover {
+                background-color: #dddddd;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -88,6 +115,26 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+
+                <div class="pizza-selection">
+                    <b>Thanks god its pizza day! Select your pizza of the day!</b>
+                    <table>
+                        <tr>
+                            <th>Pizza</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Take it!</th>
+                        </tr>
+                        @foreach ($pizzas as $pizza)
+                            <tr>
+                                <td>{{$pizza->name}}</td>
+                                <td>{{$pizza->description}}</td>
+                                <td>{{$pizza->price}}&euro;</td>
+                                <td><input type="checkbox" id="pizza_{{$pizza->id}}"/></td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>
