@@ -90,3 +90,9 @@ docker ps
 
 ## Start Production Environment
 
+
+## Edit dockerfile
+```
+# check the current WORKDIR with:
+RUN pwd
+```
