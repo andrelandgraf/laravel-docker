@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**
+ * pizza api to add and delete pizzas
+ * see routes/web.php for /pizzas web content
+ */
+Route::post('/pizza', function(Request $request){
+    $pizza = $request->getContent();
+    echo $pizza;
+});

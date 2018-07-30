@@ -1,0 +1,32 @@
+/*
+ * have a look at the material design guides for how to approach color systems and ux design
+*/
+.md-box {
+    box-shadow: 0 2px 2px 0 rgba(0, 0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.pizza-selection {
+    border-collapse: collapse;
+}
+
+.pizza-selection table{
+    margin: 0 10px 20px 10px;
+    text-align: left;
+}
+
+.pizza-selection td, .pizza-selection th{
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+.pizza-selection td {
+    color: #1b1e21;
+}
+
+.pizza-selection tr:nth-child(even){
+    background-color: #F2F2F2;
+}
+
+.pizza-selection tr:hover {
+    background-color: #dddddd;
+}

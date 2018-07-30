@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! Check out the content of this page:
+                    <ul>
+                        <li><a href={{url("/pizzas")}}>Pizza</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
