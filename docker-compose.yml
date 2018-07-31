@@ -12,7 +12,12 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
-
+    command:
+      # this command for dev enviorment only
+      # npm run production for production
+      # runs laravel mix/eslint/webpack in the background
+      # to detect changes, rebuild js and css and warn / error if eslint rules are hurt
+      -npm run dev
   # The Web Server
   web:
     build:

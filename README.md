@@ -35,11 +35,19 @@ docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 ```
 --ignore-platform-reqs to mute errors from composer image php version, see: https://hub.docker.com/r/library/composer/
 
-**Start the web app for dev**
+**Start the dev env the first time after build**
  
 ```
 docker-compose up
 ```
+
+**Installing npm_modules**
+ ```
+docker-compose exec app npm install
+```
+Npm and node are already installed inside the container, `npm install` inside 
+the docker-container so you do not have to install npm locally on your machine.
+
 
 **Application key - Setting up laravel after docker-compose up**
  ```
@@ -50,6 +58,7 @@ This has to be done only once.
 
 No need for "docker-compose exec app php artisan optimize" anymore, see: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
+
 
 ## Working with PhpStorm
 

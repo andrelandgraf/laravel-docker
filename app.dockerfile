@@ -8,6 +8,13 @@ RUN apt-get update && apt-get install -y libmcrypt-dev git zip\
     && docker-php-ext-enable imagick \
     && docker-php-ext-install mcrypt pdo_mysql
 
+# install npm and nodejs
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -\
+    && apt-get install -y nodejs
+
+# install global npm packages here (-g)
+
+
 # we should do this in dev mode only, composer should not be available in production
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin --filename=composer
