@@ -35,7 +35,7 @@ docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 ```
 --ignore-platform-reqs to mute errors from composer image php version, see: https://hub.docker.com/r/library/composer/
 
-**Start the dev env the first time after build**
+## Start the dev env the first time after build
  
 ```
 docker-compose up
@@ -83,13 +83,14 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 5. If necessary, download the driver and test the connection.
 6. For more information see the [jetbrains documentation](https://www.jetbrains.com/help/idea/running-a-dbms-image.html).
 
+**Enable ESLint**
 
 ## Start Dev Environment
 
 ```
 docker-compose up
-
 ```
+This command starts all three containers and runs `npm run dev` already. 
 
 **Check containers**
 
