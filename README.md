@@ -48,6 +48,33 @@ docker-compose exec app npm install
 Npm and node are already installed inside the container, `npm install` inside 
 the docker-container so you do not have to install npm locally on your machine.
 
+**Setting up Git - Commit - ESLint
+
+add File .git/hooks/commit-msg and paste following code inside:
+```
+#!/bin/bash
+files=$(git diff --cached --name-only | grep '\.jsx\?$')
+
+# Prevent ESLint help message if no files matched
+if [[ $files = "" ]] ; then
+  exit 0
+fi
+
+failed=0
+for file in ${files}; do
+  git show :$file | eslint $file
+  if [[ $? != 0 ]] ; then
+    failed=1
+  fi
+done;
+
+if [[ $failed != 0 ]] ; then
+  echo "🚫🚫🚫 ESLint failed, git commit denied!"
+  exit $failed
+fi
+```
+
+This prevents bad JS code to get commited. -> Fix ESLint errors and try to commit again.
 
 **Application key - Setting up laravel after docker-compose up**
  ```
@@ -84,6 +111,14 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 6. For more information see the [jetbrains documentation](https://www.jetbrains.com/help/idea/running-a-dbms-image.html).
 
 **Enable ESLint**
+
+ESLint is na open source project and provides a pluggable linting utility for JavaScript. It will throw errors and warnings
+according to the defined rules in the .eslintrc file. 
+
+You cannot commit files that still have ESLint errors. See [#13](https://github.com/andrelandgraf/laravel-docker/issues/13) for more information
+
+Make sure ESLint is activated: `File > Settings > Languages & Frameworks > JavaScript > Code Qualitity Tools > ESLint` to receive the warnings within the IDE.
+
 
 ## Start Dev Environment
 
