@@ -12,4 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js(['config.js',
+        'resources/assets/js/services/HttpService.js,',
+        'resources/assets/js/services/PizzaService.js',
+        'resources/assets/js/components/pizza.js'], 'public/js/pizza.js')
    .sass('resources/assets/sass/app.scss', 'public/css');

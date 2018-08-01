@@ -3,9 +3,7 @@
 @section('content')
     @push('scripts')
         <!-- Scripts -->
-        <!-- <script src="{{ asset('js/services/HttpService.js')}}"></script>
-        <script src="{{ asset('js/services/PizzaService.js')}}"></script>-->
-        <script src="{{ asset('js/components/pizza.js')}}"></script>
+        <script src="{{ asset('js/pizza.js')}}"></script>
     @endpush
     <!-- Styles -->
     <link href="{{ asset('css/pizza.css') }}" rel="stylesheet">
@@ -20,7 +18,6 @@
                                 Please fix the following errors
                             </div>
                         @endif
-                            {{asset('js/components/pizza.js')}}
                         @include('pizza.table')
                     </form>
                 </div>

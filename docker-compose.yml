@@ -12,12 +12,13 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
-    command:
+    #command:
       # this command for dev enviorment only
       # npm run production for production
       # runs laravel mix/eslint/webpack in the background
       # to detect changes, rebuild js and css and warn / error if eslint rules are hurt
-      -npm run dev
+      #-npm run dev -b
+      # !! racecondition here! If we really say npm install inside the container after build, this command might fail ?
   # The Web Server
   web:
     build:

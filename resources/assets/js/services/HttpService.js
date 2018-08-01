@@ -1,4 +1,4 @@
-import {port, appUrl} from "../../../config.js";
+import {port, appUrl} from "../../../../config.js";
 
 export default class HttpService {
 

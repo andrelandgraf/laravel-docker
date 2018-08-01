@@ -1,6 +1,6 @@
 import HttpService from './HttpService.js';
 
-class PizzaService {
+export default class PizzaService {
     static baseUrl() {
         return HttpService.apiUrl() + '/pizza/';
     }
