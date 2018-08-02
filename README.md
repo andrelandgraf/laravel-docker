@@ -50,7 +50,7 @@ the docker-container so you do not have to install npm locally on your machine.
 
 **Setting up Git - Commit - ESLint
 
-If you use Webstorm:
+If you use PhpStorm:
 - Go to "File > Settings > Editor > File TypesSettings" and remove .git; from the Ignore files and folders text field
 
 Add File .git/hooks/commit-msg and paste following code inside:
