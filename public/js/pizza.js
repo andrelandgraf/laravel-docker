@@ -90,39 +90,40 @@ var addPizza = function () {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
+                        console.log("we clicked");
                         name = document.querySelector('#new_pizza_name').value;
                         description = document.querySelector('#new_pizza_description').value;
                         price = document.querySelector('#new_pizza_price').value;
 
                         if (!(name === '' || price === '')) {
-                            _context.next = 6;
+                            _context.next = 7;
                             break;
                         }
 
                         alert('Please add a name and a valid price');
                         return _context.abrupt('return');
 
-                    case 6:
-                        _context.prev = 6;
-                        _context.next = 9;
+                    case 7:
+                        _context.prev = 7;
+                        _context.next = 10;
                         return __WEBPACK_IMPORTED_MODULE_1__services_PizzaService_js__["a" /* default */].addNewPizza({
                             name: name, description: description, price: price
                         });
 
-                    case 9:
+                    case 10:
                         data = _context.sent;
-                        _context.next = 17;
+                        _context.next = 18;
                         break;
 
-                    case 12:
-                        _context.prev = 12;
-                        _context.t0 = _context['catch'](6);
+                    case 13:
+                        _context.prev = 13;
+                        _context.t0 = _context['catch'](7);
 
                         alert(_context.t0);
                         console.log(_context.t0);
                         return _context.abrupt('return');
 
-                    case 17:
+                    case 18:
                         id = data.id;
 
                         console.log(id);
@@ -140,12 +141,12 @@ var addPizza = function () {
                         document.querySelector('#new_pizza_description').value = '';
                         document.querySelector('#new_pizza_price').value = '';
 
-                    case 27:
+                    case 28:
                     case 'end':
                         return _context.stop();
                 }
             }
-        }, _callee, this, [[6, 12]]);
+        }, _callee, this, [[7, 13]]);
     }));
 
     return function addPizza() {
@@ -156,6 +157,9 @@ var addPizza = function () {
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 
+
+var button = document.getElementById('add_new_pizza');
+button.addEventListener('click', addPizza);
 
 /***/ }),
 
