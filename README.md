@@ -50,7 +50,10 @@ the docker-container so you do not have to install npm locally on your machine.
 
 **Setting up Git - Commit - ESLint
 
-add File .git/hooks/commit-msg and paste following code inside:
+If you use Webstorm:
+- Go to "File > Settings > Editor > File TypesSettings" and remove .git; from the Ignore files and folders text field
+
+Add File .git/hooks/commit-msg and paste following code inside:
 ```
 #!/bin/bash
 files=$(git diff --cached --name-only | grep '\.jsx\?$')
