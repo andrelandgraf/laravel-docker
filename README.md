@@ -48,7 +48,7 @@ docker-compose exec app npm install
 Npm and node are already installed inside the container, `npm install` inside 
 the docker-container so you do not have to install npm locally on your machine.
 
-**Setting up Git - Commit - ESLint
+**Setting up Git - Commit - ESLint**
 
 If you use PhpStorm:
 - Go to "File > Settings > Editor > File TypesSettings" and remove .git; from the Ignore files and folders text field
