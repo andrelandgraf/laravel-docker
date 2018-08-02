@@ -18,7 +18,8 @@ mix
     .eslint({
         "env": {
             "es6": true,
-            "browser": true
+            "browser": true,
+            "jquery": true
         },
         "extends": "airbnb",
         "rules": {
