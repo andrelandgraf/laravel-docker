@@ -83,83 +83,74 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_PizzaService_js__ = __webpack_require__(49);
 
 
-var addPizza = function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-        var name, description, price, data, id, table, content, tr;
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-            while (1) {
-                switch (_context.prev = _context.next) {
-                    case 0:
-                        console.log("we clicked");
-                        name = document.querySelector('#new_pizza_name').value;
-                        description = document.querySelector('#new_pizza_description').value;
-                        price = document.querySelector('#new_pizza_price').value;
-
-                        if (!(name === '' || price === '')) {
-                            _context.next = 7;
-                            break;
-                        }
-
-                        alert('Please add a name and a valid price');
-                        return _context.abrupt('return');
-
-                    case 7:
-                        _context.prev = 7;
-                        _context.next = 10;
-                        return __WEBPACK_IMPORTED_MODULE_1__services_PizzaService_js__["a" /* default */].addNewPizza({
-                            name: name, description: description, price: price
-                        });
-
-                    case 10:
-                        data = _context.sent;
-                        _context.next = 18;
-                        break;
-
-                    case 13:
-                        _context.prev = 13;
-                        _context.t0 = _context['catch'](7);
-
-                        alert(_context.t0);
-                        console.log(_context.t0);
-                        return _context.abrupt('return');
-
-                    case 18:
-                        id = data.id;
-
-                        console.log(id);
-                        // add new tr
-                        // this returns us the table body (first child of a talbe)
-                        table = document.querySelector('#pizzas').children[0];
-                        content = '<td>' + name + '</td>\n            <td>' + description + '</td>\n            <td>' + price + '&euro;</td>\n            <td>\n                <input type=\'checkbox\' class=\'form-control\' id=' + id + ' name=' + id + '/>\n            </td>';
-                        tr = document.createElement('tr');
-
-                        tr.innerHTML = content;
-                        // add new tr before the add pizza tr
-                        table.insertBefore(tr, table.children[table.children.length - 1]);
-                        // clear values
-                        document.querySelector('#new_pizza_name').value = '';
-                        document.querySelector('#new_pizza_description').value = '';
-                        document.querySelector('#new_pizza_price').value = '';
-
-                    case 28:
-                    case 'end':
-                        return _context.stop();
-                }
-            }
-        }, _callee, this, [[7, 13]]);
-    }));
-
-    return function addPizza() {
-        return _ref.apply(this, arguments);
-    };
-}();
-
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 
 
-var button = document.getElementById('add_new_pizza');
-button.addEventListener('click', addPizza);
+window.addPizza = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+    var name, description, price, data, id, table, content, tr;
+    return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                    console.log("we clicked");
+                    name = document.querySelector('#new_pizza_name').value;
+                    description = document.querySelector('#new_pizza_description').value;
+                    price = document.querySelector('#new_pizza_price').value;
+
+                    if (!(name === '' || price === '')) {
+                        _context.next = 7;
+                        break;
+                    }
+
+                    alert('Please add a name and a valid price');
+                    return _context.abrupt('return');
+
+                case 7:
+                    _context.prev = 7;
+                    _context.next = 10;
+                    return __WEBPACK_IMPORTED_MODULE_1__services_PizzaService_js__["a" /* default */].addNewPizza({
+                        name: name, description: description, price: price
+                    });
+
+                case 10:
+                    data = _context.sent;
+                    _context.next = 18;
+                    break;
+
+                case 13:
+                    _context.prev = 13;
+                    _context.t0 = _context['catch'](7);
+
+                    alert(_context.t0);
+                    console.log(_context.t0);
+                    return _context.abrupt('return');
+
+                case 18:
+                    id = data.id;
+
+                    console.log(id);
+                    // add new tr
+                    // this returns us the table body (first child of a talbe)
+                    table = document.querySelector('#pizzas').children[0];
+                    content = '<td>' + name + '</td>\n            <td>' + description + '</td>\n            <td>' + price + '&euro;</td>\n            <td>\n                <input type=\'checkbox\' class=\'form-control\' id=' + id + ' name=' + id + '/>\n            </td>';
+                    tr = document.createElement('tr');
+
+                    tr.innerHTML = content;
+                    // add new tr before the add pizza tr
+                    table.insertBefore(tr, table.children[table.children.length - 1]);
+                    // clear values
+                    document.querySelector('#new_pizza_name').value = '';
+                    document.querySelector('#new_pizza_description').value = '';
+                    document.querySelector('#new_pizza_price').value = '';
+
+                case 28:
+                case 'end':
+                    return _context.stop();
+            }
+        }
+    }, _callee, this, [[7, 13]]);
+}));
 
 /***/ }),
 

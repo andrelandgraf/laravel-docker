@@ -1,6 +1,6 @@
 import PizzaService from '../services/PizzaService.js';
 
-async function addPizza(){
+window.addPizza = async function (){
     console.log("we clicked");
     const name = document.querySelector('#new_pizza_name').value;
     const description = document.querySelector('#new_pizza_description').value;
@@ -41,6 +41,3 @@ async function addPizza(){
     document.querySelector('#new_pizza_description').value = '';
     document.querySelector('#new_pizza_price').value = '';
 }
-
-const button = document.getElementById('add_new_pizza');
-button.addEventListener('click', addPizza);

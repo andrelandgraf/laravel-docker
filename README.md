@@ -84,7 +84,7 @@ fi
 
 This prevents bad JS code to get commited. -> Fix ESLint errors and try to commit again.
 
-You can run eslint on the terminal like that: `./node_modules/.bin/eslint myFile.js`
+You can run ESLint on the terminal like that: `./node_modules/.bin/eslint myFile.js`
 
 **Application key - Setting up laravel after docker-compose up**
  ```
