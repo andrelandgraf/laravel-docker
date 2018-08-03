@@ -41,5 +41,3 @@ window.addPizza = async function () {
   document.querySelector('#new_pizza_description').value = '';
   document.querySelector('#new_pizza_price').value = '';
 };
-
-let test;

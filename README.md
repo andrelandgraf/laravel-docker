@@ -70,7 +70,7 @@ fi
 
 failed=0
 for file in ${files}; do
-  git show :$file | eslint $file
+  git show :$file | ./node_modules/.bin/eslint $file
   if [[ $? != 0 ]] ; then
     failed=1
   fi
@@ -83,6 +83,7 @@ fi
 ```
 
 This prevents bad JS code to get commited. -> Fix ESLint errors and try to commit again.
+IF the hook is not working, try: `chmod +x commit-msg`
 
 You can run ESLint on the terminal like that: `./node_modules/.bin/eslint myFile.js`
 
