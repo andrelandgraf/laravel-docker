@@ -1,131 +1,75 @@
-import {port, appUrl} from "../../../../config.js";
+import { port, appUrl } from '../../../../config';
 
 export default class HttpService {
+  static apiUrl() {
+    return `${appUrl}:${port}/api`;
+  }
 
-    static apiUrl() {
-        return appUrl + ":" + port;
-    }
+  /**
+   * lower abstraction of fetch
+   * @param url
+   * @param method
+   * @param data
+   * @param onSuccess
+   * @param onError
+   */
+  static call(url, method, onSuccess, onError, data) {
+    const sending = (method.toUpperCase() === 'POST' || method.toUpperCase() === 'PUT');
+    const header = new Headers();
+    if (sending) header.append('Content-Type', 'application/json');
+    const req = {
+      method: method.toUpperCase(),
+      headers: header,
+    };
+    if (sending) req.body = JSON.stringify(data);
+    fetch(url, req)
+      .then((resp) => {
+        if (!resp.ok) onError({ status: resp.status, message: resp.statusText });
+        return resp.json();
+      })
+      .then(resp => onSuccess(resp.json()))
+      .catch(err => onError({ status: 500, message: err }));
+  }
 
-    /**
+  /**
      * implementation of http get
      * @param url
      * @param onSuccess
      * @param onError
      */
-    static get(url, onSuccess, onError) {
-        let header = new Headers();
+  static get(url, onSuccess, onError) {
+    HttpService.call(url, 'GET', onSuccess, onError);
+  }
 
-        fetch(url, {
-            method: 'GET',
-            headers: header
-        }).then((resp) => {
-            if (resp.ok) {
-                return resp.json();
-            } else {
-                resp.json().then((json) => {
-                    onError({code: json.code, title: json.error, msg: json.message});
-                }).catch(() => {
-                    onError({code: 500, title: 'Server error', msg: 'Unknown error in backend'});
-                });
-            }
-        }).then((resp) => {
-            onSuccess(resp);
-        }).catch(() => {
-            onError({code: 500, title: 'Server error', msg: 'Failed to contact backend'});
-        });
-    }
-
-    /**
+  /**
      * implementation of http put
      * @param url
      * @param data
      * @param onSuccess
      * @param onError
      */
-    static put(url, data, onSuccess, onError) {
-        let header = new Headers();
-        header.append('Content-Type', 'application/json');
+  static put(url, data, onSuccess, onError) {
+    HttpService.call(url, 'PUT', onSuccess, onError, data);
+  }
 
-        fetch(url, {
-            method: 'PUT',
-            headers: header,
-            body: JSON.stringify(data)
-        }).then((resp) => {
-            if (resp.ok) {
-                return resp.json();
-            } else {
-                resp.json().then((json) => {
-                    onError({code: json.code, title: json.error, msg: json.message});
-                }).catch(() => {
-                    onError({code: 500, title: 'Server error', msg: 'Unknown error in backend'});
-                });
-            }
-        }).then((resp) => {
-            onSuccess(resp);
-        }).catch(() => {
-            onError({code: 500, title: 'Server error', msg: 'Failed to contact backend'});
-        });
-    }
-
-    /**
+  /**
      * implementation of http post
      * @param url
      * @param data
      * @param onSuccess
      * @param onError
      */
-    static post(url, data, onSuccess, onError) {
-        let header = new Headers();
-        header.append('Content-Type', 'application/json');
+  static post(url, data, onSuccess, onError) {
+    HttpService.call(url, 'POST', onSuccess, onError, data);
+  }
 
-        fetch(url, {
-            method: 'POST',
-            headers: header,
-            body: JSON.stringify(data)
-        }).then((resp) => {
-            if (resp.ok) {
-                return resp.json();
-            }
-            else {
-                resp.json().then((json) => {
-                    onError({code: json.code, title: json.error, msg: json.message});
-                }).catch(() => {
-                    onError({code: 500, title: 'Server error', msg: 'Unknown error in backend'});
-                });
-            }
-        }).then((resp) => {
-            onSuccess(resp);
-        }).catch(() => {
-            onError({code: 500, title: 'Server error', msg: 'Failed to contact backend'});
-        });
-    }
-
-    /**
+  /**
      * implementation of http delete
      * @param url
      * @param onSuccess
      * @param onError
      */
-    static delete(url, onSuccess, onError) {
-        let header = new Headers();
-
-        fetch(url, {
-            method: 'DELETE',
-            headers: header
-        }).then((resp) => {
-            if (resp.ok) {
-                return resp.json();
-            } else {
-                resp.json().then((json) => {
-                    onError({code: json.code, title: json.error, msg: json.message});
-                }).catch(() => {
-                    onError({code: 500, title: 'Server error', msg: 'Unknown error in backend'});
-                });
-            }
-        }).then((resp) => {
-            onSuccess(resp);
-        }).catch((e) => {
-            onError(e);
-        });
-    }
+  static delete(url, onSuccess, onError) {
+    HttpService.call(url, 'DELETE', onSuccess, onError);
+  }
 }
