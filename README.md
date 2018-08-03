@@ -120,7 +120,7 @@ according to the defined rules in the .eslintrc file.
 
 You cannot commit files that still have ESLint errors. See [#13](https://github.com/andrelandgraf/laravel-docker/issues/13) for more information
 
-Make sure ESLint is activated: `File > Settings > Languages & Frameworks > JavaScript > Code Qualitity Tools > ESLint` to receive the warnings within the IDE.
+Make sure ESLint is enabled: `File > Settings > Languages & Frameworks > JavaScript > Code Qualitity Tools > ESLint` to receive the warnings within the IDE.
 
 
 ## Start Dev Environment
