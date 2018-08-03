@@ -15,15 +15,4 @@ require('laravel-mix-eslint');
 mix
     .js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/components/pizza.js', 'public/js/pizza.js')
-    .eslint({
-        "env": {
-            "es6": true,
-            "browser": true,
-            "jquery": true
-        },
-        "extends": "airbnb",
-        "rules": {
-            "no-console": 0,
-        }
-    })
    .sass('resources/assets/sass/app.scss', 'public/css');

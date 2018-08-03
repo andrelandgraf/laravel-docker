@@ -52,6 +52,11 @@ the docker-container so you do not have to install npm locally on your machine.
 
 If you use PhpStorm:
 - Go to "File > Settings > Editor > File TypesSettings" and remove .git; from the Ignore files and folders text field
+- IF the node runtime is missing, do: 
+```
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -\
+    && apt-get install -y nodejs
+```
 
 Add File .git/hooks/commit-msg and paste following code inside:
 ```
@@ -78,6 +83,8 @@ fi
 ```
 
 This prevents bad JS code to get commited. -> Fix ESLint errors and try to commit again.
+
+You can run eslint on the terminal like that: `./node_modules/.bin/eslint myFile.js`
 
 **Application key - Setting up laravel after docker-compose up**
  ```
