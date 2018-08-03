@@ -130,6 +130,12 @@ You cannot commit files that still have ESLint errors. See [#13](https://github.
 
 Make sure ESLint is enabled: `File > Settings > Languages & Frameworks > JavaScript > Code Qualitity Tools > ESLint` to receive the warnings within the IDE.
 
+**Enable EditorConfig**
+
+The file .editorconfig describes project wide rules for code styles. Make sure you have the Plugin EditorConigh installed and enabled. 
+1. File > Settings > Plugins > look for EditorConfig and install it. 
+2. File > Settings > Editor > Code Style > Enable EditorConfig support
+
 
 ## Start Dev Environment
 
