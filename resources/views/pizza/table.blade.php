@@ -8,7 +8,7 @@
             <th>Take it!</th>
         </tr>
         @foreach ($pizzas as $pizza)
-        <tr>
+        <tr id={{'tr_'.$pizza->id}} draggable="true" ondragstart="dragPizza(event)">
             <td>{{$pizza->name}}</td>
             <td>{{$pizza->description}}</td>
             <td>{{$pizza->price}}&euro;</td>

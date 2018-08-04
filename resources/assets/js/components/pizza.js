@@ -58,8 +58,42 @@ async function deletePizza(id) {
   }
 }
 
+function removeDeleteArea() {
+  const bin = document.querySelector('#bin');
+  if (typeof bin !== 'undefined') bin.remove();
+}
 
-// make addPizza global
+function dropPizza(event) {
+  event.preventDefault();
+  removeDeleteArea();
+  const id = event.dataTransfer.getData('text');
+  deletePizza(id.split('_')[1])
+    .then(() => {
+      const tr = document.querySelector(`#${id}`);
+      if (typeof tr !== 'undefined') tr.remove();
+    })
+    .catch(err => console.log(err));
+}
+
+function showDeleteArea() {
+  const bin = document.createElement('div');
+  bin.setAttribute('style', 'width: 350px; height: 70px; padding: 10px; border: 1px solid #FF0000; background-color: #E5E4E2;'
+    + 'position: fixed; top: 10vh; right: 30vw');
+  bin.setAttribute('id', 'bin');
+  bin.textContent = 'Place a pizza here to delete it!';
+  bin.ondrop = dropPizza;
+  bin.ondragover = event => event.preventDefault();
+  document.querySelector('#app').appendChild(bin);
+}
+
+function dragPizza(event) {
+  showDeleteArea();
+  event.dataTransfer.setData('text', event.target.id);
+}
+
+
+// make functions global
 window.addPizza = addPizza;
 window.getPizzas = getPizzas;
 window.deletePizza = deletePizza;
+window.dragPizza = dragPizza;

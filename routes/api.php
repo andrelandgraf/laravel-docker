@@ -29,3 +29,15 @@ Route::get('/pizza', function(Request $request){
     return App\Pizza::all()->toArray();
 });
 
+/**
+ * we name the parameter pizza, so that laravel automatically tries to find the object for us
+ * using {id} instead would give us the actually id parameter that comes from the frontend
+ */
+Route::delete('/pizza/{pizza}', function(App\Pizza $pizza){
+    $deleted = $pizza->delete();
+    if($deleted)
+        return response()->json(['message' => 'Deleted'], 200);
+    else
+        abort(404);
+});
+
