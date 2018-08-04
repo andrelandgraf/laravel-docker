@@ -17,5 +17,11 @@ class Pizza extends Model
      *  see: https://stackoverflow.com/questions/30159257/base-table-or-view-not-found-1146-table-laravel-5
      * @var string
      */
-    public $table = "pizza";
+    public $table = 'pizza';
+
+    /**
+     * The attributes that are mass fillable (map from array to attributes)
+     * @var array
+     */
+    protected $fillable = array('name', 'description', 'price');
 }

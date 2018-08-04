@@ -24,7 +24,7 @@
             </td>
             <td><input type="number" id="new_pizza_price" name="new_pizza_price" placeholder="2.0" min="0" max="100"/></td>
             <td>
-                <button type="button" class="md-box btn btn-default" id="add_new_pizza" value="Add Pizza!" onClick="addPizza()">Add Pizza!</button>
+                <button type="button" class="md-box btn btn-default" id="add_new_pizza" onclick="addPizza()">Add Pizza!</button>
             </td>
         </tr>
     </table>

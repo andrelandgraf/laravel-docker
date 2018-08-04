@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-header">Pizza</div>
                 <div class="card-body">
-                    <form action="/pizzas" method="post">
+                    <form action="/pizza" method="post">
                         @if ($errors->any())
                             <div class="alert alert-danger" role="alert">
                                 Please fix the following errors

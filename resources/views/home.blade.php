@@ -16,7 +16,7 @@
 
                     You are logged in! Check out the content of this page:
                     <ul>
-                        <li><a href={{url("/pizzas")}}>Pizza</a></li>
+                        <li><a href={{url("/pizza")}}>Pizza</a></li>
                     </ul>
                 </div>
             </div>

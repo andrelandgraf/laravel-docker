@@ -27,7 +27,7 @@ export default class HttpService {
         if (!resp.ok) onError({ status: resp.status, message: resp.statusText });
         return resp.json();
       })
-      .then(resp => onSuccess(resp.json()))
+      .then(resp => onSuccess(resp))
       .catch(err => onError({ status: 500, message: err }));
   }
 

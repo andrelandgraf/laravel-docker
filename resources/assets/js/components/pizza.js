@@ -1,7 +1,6 @@
 import PizzaService from '../services/PizzaService';
 
-window.addPizza = async function () {
-  console.log('we clicked');
+async function addPizza() {
   const name = document.querySelector('#new_pizza_name').value;
   const description = document.querySelector('#new_pizza_description').value;
   const price = document.querySelector('#new_pizza_price').value;
@@ -12,17 +11,14 @@ window.addPizza = async function () {
   // put new values into db
   let data;
   try {
-    // use var because it is function scoped
-    data = await PizzaService.addNewPizza({
+    data = await PizzaService.create({
       name, description, price,
     });
   } catch (error) {
-    alert(error);
     console.log(error);
     return;
   }
   const { id } = data;
-  console.log(id);
   // add new tr
   // this returns us the table body (first child of a talbe)
   const table = document.querySelector('#pizzas').children[0];
@@ -40,4 +36,30 @@ window.addPizza = async function () {
   document.querySelector('#new_pizza_name').value = '';
   document.querySelector('#new_pizza_description').value = '';
   document.querySelector('#new_pizza_price').value = '';
-};
+}
+
+async function getPizzas() {
+  try {
+    // use var because it is function scoped
+    const data = await PizzaService.getPizzas();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function deletePizza(id) {
+  try {
+    // use var because it is function scoped
+    const data = await PizzaService.delete(id);
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+// make addPizza global
+window.addPizza = addPizza;
+window.getPizzas = getPizzas;
+window.deletePizza = deletePizza;

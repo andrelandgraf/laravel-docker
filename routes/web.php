@@ -15,14 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function(){
+Route::get('/pizza', function(){
     $pizzas = \App\Pizza::all();
     return view('/pizza/index')->with('pizzas', $pizzas);
 });
 
-Route::post('/pizzas', function(){
+Route::post('/pizza', function(){
     $pizzas = \App\Pizza::all();
-    return view('/pizzas/index')->with('pizzas', $pizzas);
+    return view('/pizza/index')->with('pizzas', $pizzas);
 });
 
 Auth::routes();

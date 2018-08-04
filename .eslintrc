@@ -6,7 +6,8 @@
     "jquery": true
   },
   "rules": {
-    "no-console": 1
+    "no-console": 1,
+    "no-alert": 1
   },
   "plugins": ["html", "markdown", "json"]
 }

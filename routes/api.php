@@ -22,6 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  * see routes/web.php for /pizzas web content
  */
 Route::post('/pizza', function(Request $request){
-    $pizza = $request->getContent();
-    echo $pizza;
+    return App\Pizza::create($request->all());
 });
+
+Route::get('/pizza', function(Request $request){
+    return App\Pizza::all()->toArray();
+});
+

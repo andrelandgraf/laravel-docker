@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y libmcrypt-dev git zip\
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -\
     && apt-get install -y nodejs
 
+# update npm
+# RUN npm i -g npm
+
 # we should do this in dev mode only, composer should not be available in production
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin --filename=composer
