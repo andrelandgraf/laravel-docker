@@ -65,7 +65,6 @@ function removeDeleteArea() {
 
 function dropPizza(event) {
   event.preventDefault();
-  removeDeleteArea();
   const id = event.dataTransfer.getData('text');
   deletePizza(id.split('_')[1])
     .then(() => {
@@ -77,10 +76,12 @@ function dropPizza(event) {
 
 function showDeleteArea() {
   const bin = document.createElement('div');
-  bin.setAttribute('style', 'width: 350px; height: 70px; padding: 10px; border: 1px solid #FF0000; background-color: #E5E4E2;'
-    + 'position: fixed; top: 10vh; right: 30vw');
+  bin.setAttribute('style', 'width: 30vw; height: 5vh; padding: 10px; border: 1px solid #FF0000; opacity: 0.70; '
+    + 'background-color: #E5E4E2;'
+    + 'position: fixed; top: 15vh; right: 30vw');
   bin.setAttribute('id', 'bin');
-  bin.textContent = 'Place a pizza here to delete it!';
+  bin.setAttribute('class', 'md-box');
+  bin.innerHTML = '<i class="far fa-trash-alt" style="height: 3vh; width: 2vw"></i>Place a pizza here to delete it!';
   bin.ondrop = dropPizza;
   bin.ondragover = event => event.preventDefault();
   document.querySelector('#app').appendChild(bin);
@@ -97,3 +98,4 @@ window.addPizza = addPizza;
 window.getPizzas = getPizzas;
 window.deletePizza = deletePizza;
 window.dragPizza = dragPizza;
+window.removePizzaDeleteArea = removeDeleteArea;

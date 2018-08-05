@@ -8,12 +8,12 @@
             <th>Take it!</th>
         </tr>
         @foreach ($pizzas as $pizza)
-        <tr id={{'tr_'.$pizza->id}} draggable="true" ondragstart="dragPizza(event)">
+        <tr id={{'tr_'.$pizza->id}} draggable="true" ondragstart="dragPizza(event)" ondragend="removePizzaDeleteArea()">
             <td>{{$pizza->name}}</td>
             <td>{{$pizza->description}}</td>
             <td>{{$pizza->price}}&euro;</td>
             <td>
-                <input type="checkbox" class="form-control" id={{$pizza->id}} name={{$pizza->id}}/>
+                <input type="checkbox" class="checkbox" id={{$pizza->id}} name={{$pizza->id}}/>
             </td>
         </tr>
         @endforeach
