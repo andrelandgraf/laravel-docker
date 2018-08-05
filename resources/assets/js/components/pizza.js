@@ -2,7 +2,7 @@ import PizzaService from '../services/PizzaService';
 
 async function addPizza() {
   const name = document.querySelector('#new_pizza_name').value;
-  const description = document.querySelector('#new_pizza_description').value;
+  const description = document.querySelector('#new_pizza_description').value || '';
   const price = document.querySelector('#new_pizza_price').value;
   if (name === '' || price === '') {
     alert('Please add a name and a valid price');
@@ -11,9 +11,7 @@ async function addPizza() {
   // put new values into db
   let data;
   try {
-    data = await PizzaService.create({
-      name, description, price,
-    });
+    data = await PizzaService.create({ name, description, price });
   } catch (error) {
     console.log(error);
     return;
@@ -26,7 +24,7 @@ async function addPizza() {
             <td>${description}</td>
             <td>${price}&euro;</td>
             <td>
-                <input type='checkbox' class='form-control' id=${id} name=${id}/>
+                <input type='checkbox' class='checkbox' id=${id} name=${id}/>
             </td>`;
   const tr = document.createElement('tr');
   tr.innerHTML = content;
