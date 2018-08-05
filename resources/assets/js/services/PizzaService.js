@@ -5,7 +5,7 @@ import HttpService from './HttpService';
  */
 export default class PizzaService {
   static baseUrl() {
-    return `${HttpService.apiUrl()}/pizza/`;
+    return `${HttpService.apiUrl()}/pizza`;
   }
 
   /**
