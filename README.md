@@ -1,21 +1,19 @@
 ## Info
 This is a walking skeleton web app for both development and production,
 using:
-- laravel (master / 5.6 / php >= 7.1.3)
-- mariaDB
-- docker / docker-compose
+- [laravel](https://github.com/laravel/laravel) (5.6 with php >= 7.1.3)
+- mysql
+- docker / docker-compose using the [offical php image](https://github.com/shipping-docker/php-app). 
 - ngix
+
+If you are looking for the community project of laravel + docker, have a look at [laradock](http://laradock.io/).
+[This medium post](- https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c) helped me a lot to get started but watch out as it is not up to date anymore.
 
 ## Feedback
 Feel free to get inspired and more importantly provide [your feedback](https://github.com/andrelandgraf/laravel-docker/issues) on structure and style. I'm more than happy to learn how to improve my code and architecture.
 
 ## Prerequisites
-Also have a look at:
-- https://github.com/laravel/laravel
-- https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c
-- https://github.com/shipping-docker/php-app
-
-! following guide does not work the same way for windows OS !
+! following guide does not work the same way for Windows !
 
 **Install docker and docker-compose**
 
@@ -27,26 +25,47 @@ apt-get install docker.io
 apt-get install docker-compose
 ```
 
-**Install dependencies**
+**Install composer packages**
 
 ```
 docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 
 ```
 --ignore-platform-reqs to mute errors from composer image php version, see: https://hub.docker.com/r/library/composer/
+This command will run the offical composer docker container, execute `composter install` and than remove the docker container again. 
 
 ## Start the dev env the first time after build
- 
+
 ```
 docker-compose up
 ```
 
-**Installing npm_modules**
+**Access the container
+```
+docker-compose exec app echo "Hello World!"
+```
+
+**Access the bash and keep it running
+```
+docker-compose exec app bash -b
+```
+
+**Grant Laravel writing rights**
+```
+docker-compose exec app chmod -R o+rw html/bootstrap html/storage
+```
+
+**Set up your .env file**
+```
+docker-compose exec app cpp .env.example .env
+```
+
+**Install the npm_modules**
  ```
 docker-compose exec app npm install
 ```
-Npm and node are already installed inside the container, `npm install` inside 
-the docker-container so you do not have to install npm locally on your machine.
+Npm and node are already installed inside the container, so you do not have to install npm on your machine.<br/>
+See the `package.json` file to check what packages will be installed by npm. 
 
 **Setting up Git - Commit - ESLint**
 
@@ -97,6 +116,13 @@ This has to be done only once.
 No need for "docker-compose exec app php artisan optimize" anymore, see: 
 https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 
+**Use the Artisan CLI to set up the database schema**
+```
+docker-compose exec php artisan migrate:fresh --seed
+````
+[Artisan](https://laravel.com/docs/5.6/artisan) is the built-in CLI of laravel and provides you with a bunch of useful commands.<br/>
+- `migrate:fresh` will clean the database (drop every table) and run through every migration file to set up the schema. 
+- `--seed` tells artisan to run the `laravel-docker/database/seeds/DatabaseSeeder::run()` function to seed fake data into the database. 
 
 ## Working with PhpStorm
 
