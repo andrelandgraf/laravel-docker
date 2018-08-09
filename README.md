@@ -9,6 +9,8 @@ using:
 If you are looking for the community project of laravel + docker, have a look at [laradock](http://laradock.io/).<br/>
 Also, [this medium post](https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c) helped me a lot to get started but watch out as it is not up to date anymore.
 
+For a quick overview about Laravel and Docker, check out [this wiki page](https://github.com/andrelandgraf/laravel-docker/wiki/Laravel---Docker). 
+
 ## Feedback
 Feel free to get inspired and more importantly provide [your feedback](https://github.com/andrelandgraf/laravel-docker/issues) on structure and style. I'm more than happy to learn how to improve my code and architecture.
 
