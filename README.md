@@ -170,14 +170,14 @@ The file .editorconfig describes project wide rules for code styles. Make sure y
 2. File > Settings > Editor > Code Style > Enable EditorConfig support
 
 
-## Start Dev Environment
+## Working with the development environment
 
 ```
 docker-compose up
 ```
-This command starts all three containers and runs `npm run dev` already. 
+This command starts all three containers.
 
-**Check containers**
+**Check the containers**
 
 ```
 docker ps
@@ -187,7 +187,7 @@ docker ps
 
 This will open a bash within the docker container so you can interact with php artisan and other dev tools.
 ```
-docker-compase exec app bash -b
+docker-compose exec app bash -b
 ```
 For example use [php artisan tinker](https://scotch.io/tutorials/tinker-with-the-data-in-your-laravel-apps-with-php-artisan-tinker) to work with your database like follows:
 ```
@@ -198,6 +198,11 @@ root@dockercontainer:/var/www# php artisan tinker
 => ...
 ```
 
+**Let Wepback watch any changes**
+```
+docker-compose exec app npm run watch
+```
+This will run the watch-script specified within the `package.json`. Wepback will compile any new changes to your js and css/scss files and put them into the `/public` folder.
 
 ## Start Production Environment
 
