@@ -3,7 +3,7 @@ This is a walking skeleton web app for both development and production,
 using:
 - [laravel](https://github.com/laravel/laravel) (5.6 with php >= 7.1.3)
 - mysql
-- docker / docker-compose using the [offical php image](https://github.com/shipping-docker/php-app). 
+- docker / docker-compose using the [offical php image](https://hub.docker.com/_/php/). 
 - ngix
 
 If you are looking for the community project of laravel + docker, have a look at [laradock](http://laradock.io/).
