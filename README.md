@@ -55,6 +55,7 @@ docker-compose exec app echo "Hello World!"
 ```
 docker-compose exec app bash -b
 ```
+This eliminates the need to write `docker-compose exec app` everytime. Nevertheless, this guide will further add the docker-compose command to signal that you might want to run the command inside the docker container. 
 
 **Grant Laravel writing rights**
 ```
