@@ -25,14 +25,20 @@ apt-get install docker.io
 apt-get install docker-compose
 ```
 
-**Install composer packages**
+**Clone this repository**
+```
+git clone https://github.com/andrelandgraf/laravel-docker.git
+```
+AND `cd laravel-docker` inside the project folder. 
 
+**Install composer packages**
 ```
 docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 
 ```
---ignore-platform-reqs to mute errors from composer image php version, see: https://hub.docker.com/r/library/composer/
-This command will run the offical composer docker container, execute `composter install` and than remove the docker container again. 
+This will run the offical composer docker container, execute `composer install` and than remove the docker container again. <br/>
+`--ignore-platform-reqs` mutes errors that might arise from the composer image php version, see: https://hub.docker.com/r/library/composer/.
+
 
 ## Start the dev env the first time after build
 
