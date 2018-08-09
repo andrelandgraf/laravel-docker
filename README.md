@@ -40,13 +40,13 @@ This will run the offical composer docker container, execute `composer install` 
 `--ignore-platform-reqs` mutes errors that might arise from the composer image's own php version, see: https://hub.docker.com/r/library/composer/.
 
 
-## Start the dev env the first time after build
-
+## Start the development environment for the first time
+**Start the docker containers**
 ```
 docker-compose up
 ```
 
-**Access the container**
+**Access the app container that runs the laravel application**
 ```
 docker-compose exec app echo "Hello World!"
 ```
