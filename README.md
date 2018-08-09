@@ -37,7 +37,7 @@ docker run --rm -v $(pwd):/app composer/composer install --ignore-platform-reqs
 
 ```
 This will run the offical composer docker container, execute `composer install` and than remove the docker container again. <br/>
-`--ignore-platform-reqs` mutes errors that might arise from the composer image php version, see: https://hub.docker.com/r/library/composer/.
+`--ignore-platform-reqs` mutes errors that might arise from the composer image's own php version, see: https://hub.docker.com/r/library/composer/.
 
 
 ## Start the dev env the first time after build
