@@ -46,12 +46,12 @@ This will run the offical composer docker container, execute `composer install` 
 docker-compose up
 ```
 
-**Access the container
+**Access the container**
 ```
 docker-compose exec app echo "Hello World!"
 ```
 
-**Access the bash and keep it running
+**Access the bash and keep it running**
 ```
 docker-compose exec app bash -b
 ```
