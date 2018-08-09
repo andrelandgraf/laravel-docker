@@ -71,20 +71,20 @@ docker-compose exec app cpp .env.example .env
  ```
 docker-compose exec app npm install
 ```
-Npm and node are already installed inside the container, so you do not have to install npm on your machine.<br/>
+Npm and node are already installed inside the container.<br/>
 See the `package.json` file to check what packages will be installed by npm. 
 
 **Setting up Git - Commit - ESLint**
 
 If you use PhpStorm:
 - Go to "File > Settings > Editor > File TypesSettings" and remove .git; from the Ignore files and folders text field
-- IF the node runtime is missing, do: 
+- IF the node runtime is missing, you have to install it locally on your machine: 
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | bash -\
     && apt-get install -y nodejs
 ```
 
-Add File .git/hooks/commit-msg and paste following code inside:
+Add the file .git/hooks/commit-msg and paste following code inside:
 ```
 #!/bin/bash
 files=$(git diff --cached --name-only | grep '\.jsx\?$')
