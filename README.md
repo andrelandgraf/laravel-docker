@@ -80,7 +80,7 @@ If you use PhpStorm:
 - Go to "File > Settings > Editor > File TypesSettings" and remove .git; from the Ignore files and folders text field
 - IF the node runtime is missing, do: 
 ```
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -\
+curl -sL https://deb.nodesource.com/setup_8.x | bash -\
     && apt-get install -y nodejs
 ```
 
