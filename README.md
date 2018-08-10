@@ -4,7 +4,7 @@ using:
 - [laravel](https://github.com/laravel/laravel) (5.6 with php >= 7.1.3)
 - mysql
 - docker / docker-compose using the [offical php image](https://hub.docker.com/_/php/). 
-- ngix
+- nginx
 
 If you are looking for the community project of laravel + docker, have a look at [laradock](http://laradock.io/).<br/>
 Also, [this medium post](https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c) helped me a lot to get started but watch out as it is not up to date anymore.
@@ -61,7 +61,7 @@ This eliminates the need to write `docker-compose exec app` everytime. Neverthel
 
 **Grant Laravel writing rights**
 ```
-docker-compose exec app chmod -R o+rw html/bootstrap html/storage
+docker-compose exec app chmod -R o+rw ./bootstrap ./storage
 ```
 
 **Set up your .env file**
