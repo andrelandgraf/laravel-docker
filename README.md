@@ -127,7 +127,7 @@ https://laravel-news.com/laravel-5-6-removes-artisan-optimize
 
 **Use the Artisan CLI to set up the database schema**
 ```
-docker-compose exec php artisan migrate:fresh --seed
+docker-compose exec app php artisan migrate:fresh --seed
 ````
 [Artisan](https://laravel.com/docs/5.6/artisan) is the built-in CLI of laravel and provides you with a bunch of useful commands.<br/>
 - `migrate:fresh` will clean the database (drop every table) and run through every migration file to set up the schema. 
