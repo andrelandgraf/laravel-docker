@@ -185,6 +185,10 @@ This command starts all three containers.
 docker ps
 ```
 
+**The Web Application**
+
+Afer `docker-compose up` you can access the local web app via: http://localhost:8080/
+
 **Work within the container**
 
 This will open a bash within the docker container so you can interact with php artisan and other dev tools.
